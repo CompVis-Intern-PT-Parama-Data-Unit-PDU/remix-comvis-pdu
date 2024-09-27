@@ -5,6 +5,7 @@ import {
     Scripts,
   } from "@remix-run/react";
 import "./tailwind.css";
+import Header from "./dashboard/header";
 
   
   export default function App() {
@@ -19,9 +20,9 @@ import "./tailwind.css";
           <Links />
         </head>
         <body>
-          <h1 className="text-3xl font-bold underline text-purple-700">Computer Vision Drilling Monitoring Support</h1>
+          <Header />
+          
           <Outlet />
-  
           <Scripts />
         </body>
       </html>
