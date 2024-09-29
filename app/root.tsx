@@ -3,9 +3,12 @@ import {
     Meta,
     Outlet,
     Scripts,
+    ScrollRestoration
   } from "@remix-run/react";
 import "./tailwind.css";
-import Header from "./dashboard/header";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
+import Footer from "./components/footer";
 
   
   export default function App() {
@@ -19,11 +22,18 @@ import Header from "./dashboard/header";
           <Meta />
           <Links />
         </head>
-        <body>
-          <Header />
-          
-          <Outlet />
-          <Scripts />
+        <body className="flex gap-2">
+          <aside>
+            <Sidebar />
+          </aside>
+          <main>
+            <Header />
+            <Outlet />
+            <Footer />
+
+            <ScrollRestoration />
+            <Scripts />
+          </main>
         </body>
       </html>
     );

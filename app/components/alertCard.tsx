@@ -13,10 +13,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle
-} from "./card"
+} from "./ui/card"
 import {
   ChartContainer
-} from "./chart"
+} from "./ui/chart"
 
 export default function AlertCard() {
   return (
