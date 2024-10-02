@@ -4,11 +4,13 @@
 // import { Card, CardContent } from '../components/ui/card'
 // import VerticalChart from '../components/ui/verticalChart';
 // import AlertCard from '~/components/ui/alertCard';
+import { ThemeToggle } from "~/components/mode-toggle"
 
 export default function _index() {
   return (
     <>
         <h1 className="text-3xl mt-4">Landin Page</h1>
+        <ThemeToggle />
         <p className="text-lg mb-4">
             This is the landing page. 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
