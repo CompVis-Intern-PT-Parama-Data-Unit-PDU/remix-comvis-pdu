@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Repository ini digunakan untuk Frontend dan (mungkin) Backend dari Computer Vision Website.",
   "type": "module",
+  "proxy": "http://localhost:3001",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./server.js",
+    "dev": "vite",  
+    "build": "vite build",
+    "preview": "vite preview",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "shadcn": "shadcn-ui"

@@ -4,13 +4,33 @@
 // import { Card, CardContent } from '../components/ui/card'
 // import VerticalChart from '../components/ui/verticalChart';
 // import AlertCard from '~/components/ui/alertCard';
+import { useLoaderData } from '@remix-run/react';
 import { ThemeToggle } from "~/components/mode-toggle"
 
+
+type User = {
+  id: number;
+  name: string;
+};
+
+export const loader = async () => {
+  const response = await fetch('http://localhost:3001/api/users');
+  const users: User[] = await response.json();
+  return users;
+};
+
 export default function _index() {
+  const users = useLoaderData<User[]>();
+  console.log(users);
   return (
     <>
         <h1 className="text-3xl mt-4">Landin Page</h1>
         <ThemeToggle />
+        <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li> // Pastikan user memiliki property id dan name
+        ))}
+      </ul>
         <p className="text-lg mb-4">
             This is the landing page. 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
